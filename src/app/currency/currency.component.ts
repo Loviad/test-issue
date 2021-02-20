@@ -1,4 +1,4 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component} from '@angular/core';
 import {ApiService} from '../shared/api.service';
 import {CurrencySymbol} from '../data/models/currencysymbol';
 import {PairCurrency} from '../data/models/paircurrency';
@@ -8,7 +8,7 @@ import {PairCurrency} from '../data/models/paircurrency';
   templateUrl: './currency.component.html',
   styleUrls: ['./currency.component.scss']
 })
-export class CurrencyComponent implements OnInit {
+export class CurrencyComponent{
 
   constructor(private currencyService: ApiService) {
   }
@@ -52,10 +52,6 @@ export class CurrencyComponent implements OnInit {
       this.showSymbols = false;
       this.selectedRate = '';
       this.showchart = true;
-      // this.currencyService.getPairData(this.pairCurrency[this.activePair].left, this.pairCurrency[this.activePair].right)
-      //   .subscribe((req) => {
-      //     console.log(req);
-      //   });
     } else {
       this.showchart = false;
       this.deactivatePair();
@@ -92,8 +88,5 @@ export class CurrencyComponent implements OnInit {
     if (this.activePair > -1 && this.pairCurrency.length > 0) {
       this.pairCurrency[this.activePair].active = false;
     }
-  }
-
-  ngOnInit(): void {
   }
 }

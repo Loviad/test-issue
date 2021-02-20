@@ -114,11 +114,9 @@ export class ChartComponent implements OnInit, OnDestroy {
     this.y = d3Scale.scaleLinear().range([this.height, 0]);
     this.y.domain(d3Array.extent(this.data, (d) => d.value));
 
-    // Configure the X Axis
     this.svg.append('g')
       .attr('transform', 'translate(0,' + this.height + ')')
       .call(d3Axis.axisBottom(this.x));
-    // Configure the Y Axis
     this.svg.append('g')
       .attr('class', 'axis axis--y')
       .call(d3Axis.axisLeft(this.y));
@@ -128,7 +126,6 @@ export class ChartComponent implements OnInit, OnDestroy {
     this.line = d3Shape.line()
       .x((d: any) => this.x(d.date))
       .y((d: any) => this.y(d.value));
-    // Configuring line path
     this.svg.append('path')
       .datum(this.data)
       .attr('class', 'line')

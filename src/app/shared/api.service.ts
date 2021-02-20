@@ -10,6 +10,8 @@ export class ApiService {
   @Output() needPaintGraph = new EventEmitter<{ leftCur: string, rightCur: string }>();
   private url = 'https://free.currconv.com/api/v7/';
   private key = 'apiKey=4ae40c9452b442e94d73';
+  // 9d48ab97b31d76bc421a
+  // 047f96192b09046bca84
 
   emmitPaintChart(left: string, right: string): void {
     this.needPaintGraph.next({leftCur: left, rightCur: right});

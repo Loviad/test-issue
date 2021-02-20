@@ -14,10 +14,10 @@ export class CoinAnimComponent implements AfterViewInit{
     const anim = this.document.createElement('script');
     anim.type = 'text/javascript';
     anim.src = '../../../assets/index.js';
-    const s = this.document.createElement('script');
-    s.type = 'text/javascript';
-    s.src = '../../../assets/lottie.js';
-    this.elementRef.nativeElement.appendChild(s);
+    // const s = this.document.createElement('script');
+    // s.type = 'text/javascript';
+    // s.src = '../../../assets/lottie.js';
+    // this.elementRef.nativeElement.appendChild(s);
     this.elementRef.nativeElement.appendChild(anim);
   }
 }
