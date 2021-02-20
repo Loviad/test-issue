@@ -1,0 +1,93 @@
+.chartTable .bodyChartData {
+  width: 100%;
+  padding: 10px;
+  position: relative;
+  display: flex;
+  min-width: 0;
+  background-color: #fff;
+  background-clip: initial;
+  border: 0 solid transparent;
+  border-radius: .25rem;
+  margin-bottom: 24px;
+  box-shadow: 0 0 0.875rem 0 rgb(33 37 41 / 5%);
+}
+.chartTable {
+  flex: 1 1 auto;
+  padding: 1.25rem;
+  display: flex;
+}
+@media (max-width: 750px) {
+  .chartTable {
+    flex-flow: column;
+  }
+  .block {
+    width: 100%!important;
+  }
+}
+.chartDateState {
+  flex-flow: column;
+}
+.block {
+  padding-left: 10px;
+  padding-right: 10px;
+  width: 50%;
+}
+.nameChartPair {
+  font-weight: 600;
+  text-align: center;
+  line-height: 40px;
+}
+.dateRangeChat {
+  font-size: 12px;
+  color: #3e6f93;
+}
+.profit {
+  color: #28a745;
+}
+.deprof {
+  color: #c8222b;
+}
+.profit:before {
+  content: '↑ ';
+}
+.deprof:before {
+  content: '↓ ';
+}
+.chatCardBlock {
+  display: flex;
+  line-height: 40px;
+  width: 30%;
+}
+
+
+::ng-deep .line {
+  fill: none;
+  stroke: #ffab00;
+  stroke-width: 3;
+}
+
+::ng-deep .overlay {
+  fill: none;
+  pointer-events: all;
+}
+
+/* Style the dots by assigning a fill and stroke */
+::ng-deep .dot {
+  fill: #ffab00;
+  stroke: #fff;
+}
+
+::ng-deep .focus circle {
+  fill: none;
+  stroke: steelblue;
+}
+
+
+.chart {
+  // width: 240px;
+  // height: 230px;
+
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+}

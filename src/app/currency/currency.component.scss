@@ -1,0 +1,245 @@
+.mainBody {
+  align-items: stretch;
+  display: flex;
+  width: 100%;
+  background: #222e3c;
+}
+
+.p3 {
+  padding: 3px;
+}
+
+.outerBox {
+  align-items: stretch;
+  display: flex;
+  width: 100%;
+  background: #222e3c;
+}
+
+.currencyContainer {
+  max-height: 100%;
+  display: flex;
+  flex-direction: row;
+  border-top: 1px solid #e0e5e8;
+}
+
+.currency {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.mainList {
+  display: flex;
+  flex-direction: row;
+  margin: 0;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.rateItem {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: initial;
+  border: 0 solid transparent;
+  border-radius: .25rem;
+  margin-bottom: 24px;
+  box-shadow: 0 0 0.875rem 0 rgb(33 37 41 / 5%);
+  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.rateItem.selected {
+  background-color: #28a745 !important;
+  color: #ffffff !important;
+}
+
+.rateItem.selected .rateName {
+  color: #ffffff !important;
+}
+
+.rateItemBody {
+  flex: 1 1 auto;
+  padding: 1.25rem;
+}
+
+.rateItemBody .rateHead {
+  font-weight: 600;
+}
+
+.rateItemBody .rateName {
+  color: #96afc7;
+}
+
+.rateCard {
+  flex-shrink: 0;
+  width: 100%;
+  max-width: 100%;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+@media (min-width: 1150px) {
+  .rateCard {
+    flex: 0 0 auto;
+    width: 25%;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 1149px) {
+  .rateCard {
+    flex: 0 0 auto;
+    width: 33%;
+  }
+}
+
+.rateItem:hover {
+  background-color: #c5ddeb
+}
+
+.favoriteCurrency {
+  min-width: 260px;
+  max-width: 260px;
+  transition: margin-left 0.35s cubic-bezier(0, 0.85, 0.68, 1.26), left 0.35s ease-in-out, margin-right 0.35s ease-in-out, right 0.35s ease-in-out;
+  direction: ltr;
+  background: #222e3c;
+}
+
+.content {
+  display: flex;
+  width: 100%;
+  min-width: 0;
+  min-height: 100vh;
+  transition: margin-left .35s ease-in-out, left .35s ease-in-out, margin-right .35s ease-in-out, right .35s ease-in-out;
+  background: #f7f7fc;
+  overflow: hidden;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.filterField {
+  display: block;
+  width: 100%;
+  min-height: calc(1.8125rem + 2px);
+  padding: .25rem .7rem;
+  font-size: .875rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: .2rem;
+  outline: none;
+}
+
+.placeholderImg {
+  width: 100%;
+  background-image: url("../../assets/icons/statistics.svg");
+  min-height: 600px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 30%;
+  opacity: 0.3;
+}
+
+.addButton {
+  display: flex;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  user-select: none;
+  padding: .25rem .7rem;
+  font-size: .875rem;
+  border-radius: .2rem;
+  background-color: #3b7ddd;
+  color: #fff;
+  margin: 8px;
+}
+
+.addButton:hover {
+  background-color: #5993e1;
+}
+
+.pair {
+  display: flex;
+  flex-direction: column;
+}
+
+.pair .pairVal {
+  display: block;
+  padding: .625rem 1.625rem;
+  font-weight: 400;
+  transition: background .1s ease-in-out;
+  position: relative;
+  text-decoration: none;
+  cursor: pointer;
+  color: rgba(233, 236, 239, .5);
+  background: #222e3c;
+  border-left: 3px solid transparent;
+}
+
+.pair .pairVal.active {
+  color: #e9ecef;
+  background-color: #3e6f93 !important;
+  border-left-color: #9dbdeb;
+}
+
+.pair .pairVal:nth-child(odd) {
+  background-color: #273646;
+}
+
+#chartArea {
+  width: 100%;
+  height: 20%;
+  min-height: 300px;
+  padding: 16px;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-width: 1px 1px 1px 2px;
+  border-color: #bcced8;
+  background-color: #e0e5e8;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  border-width: 1px 1px 1px 2px;
+  border-color: #e0e5e8;
+  background-color: #bcced8;
+}
+
+::-webkit-scrollbar-track {
+  border-width: 0;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+@media (max-width: 991.98px) {
+  .favoriteCurrency {
+    margin-left: -260px;
+  }
+  .content {
+    box-shadow: inset 0.75rem 0 1.5rem 0 rgb(0 0 0 / 8%);
+  }
+}
+
+@media (max-width: 992px) {
+  .mainList {
+    padding: 1.2rem 2.5rem 1rem 2.5rem;
+    width: auto;
+  }
+}

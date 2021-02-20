@@ -1,0 +1,21 @@
+<svg #chart class="chart"></svg>
+<div class="chartTable">
+  <div class="block">
+    <div class="chartMinState bodyChartData">
+      <div class="nameChartPair chatCardBlock">{{nameChartPair}}</div>
+      <div class="dateRangeChat chatCardBlock">{{dateRangeChat}}</div>
+      <div [class.profit]="profit" [class.deprof]="!profit" class="delta chatCardBlock">{{delta.toFixed(10)}}</div>
+    </div>
+  </div>
+  <div class="block">
+    <div *ngIf="data.length;" class="chartDateState bodyChartData">
+      <div *ngFor="let item of data; let i = index" class="bodyChartData">
+        <div class="dateRangeChat chatCardBlock">{{ item.date | date: 'yyyy-MM-dd'}}</div>
+        <div [class.profit]="i > 0 && (data[i].value - data[i-1].value > 0)"
+             [class.deprof]="i > 0 && (data[i].value - data[i-1].value < 0)"
+             class="delta chatCardBlock">{{item.value}}</div>
+      </div>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,50 @@
+<div class="mainBody">
+
+  <div class="content">
+    <div class="favoriteCurrency p3">
+      <div class="pair">
+        <div class="pairVal" *ngFor="let pair of pairCurrency; let i = index"
+             (click)="clickItem(i)" [class.active]="pair.active"> {{pair.left}} / {{pair.right}} </div>
+      </div>
+      <span (click)="addCurrency()" class="addButton">Добавить</span>
+    </div>
+    <div *ngIf="showSymbols; else preloader" style="width: 100%">
+      <div class="searchBox p3">
+        <input class="filterField" type="text" placeholder="Filter currency..." [(ngModel)]="searchString">
+      </div>
+      <div *ngIf="showSymbols;" class="mainList p3">
+        <div class="currency">
+          <div *ngFor="let rate of rates | symbolFilter:searchString; let rateIndex = index"
+               (click)="clickPair(rate.value)"
+               class="rateCard">
+            <div class="rateItem" [class.selected]="rate.value == selectedRate">
+              <div class="rateItemBody">
+                <div class="rateHead">
+                  {{ rate.value }}
+                </div>
+                <div class="rateName">
+                  {{rate.name}}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="numbers.length;" class="mainList p3">
+      <div class="currency">
+          <span *ngFor="let rate of rates | symbolFilter:searchString" (click)="clickPair(rate.value)"
+                class="rateItem">{{ rate.value }}</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<ng-template #preloader>
+  <div class="placeholderImg" *ngIf="!showchart"></div>
+  <div id="chartArea" *ngIf="showchart">
+    <app-chart (ready)="onChartReady()"></app-chart>
+  </div>
+</ng-template>

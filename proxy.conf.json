@@ -1,0 +1,11 @@
+{
+  "/*/data/*": {
+    "target": "https://free.currconv.com/api/v7/",
+    "secure": true,
+    "changeOrigin": true,
+    "logLevel": "debug",
+    "pathRewrite": {
+      "/data/": "?apiKey=4ae40c9452b442e94d73"
+    }
+  }
+}
