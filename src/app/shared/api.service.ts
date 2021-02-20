@@ -9,7 +9,7 @@ export class ApiService {
   }
   @Output() needPaintGraph = new EventEmitter<{ leftCur: string, rightCur: string }>();
   private url = 'https://free.currconv.com/api/v7/';
-  private key = 'apiKey=4ae40c9452b442e94d73';
+  private key = 'apiKey=4ae40c9452b442e94d73'; // хотел спрятать через proxy.conf но не завелось( без бэка пока не придумал как ещё
   // 9d48ab97b31d76bc421a
   // 047f96192b09046bca84
 
@@ -20,8 +20,6 @@ export class ApiService {
   getApprovedCurrency(): Observable<any> {
     return this.http.get('https://free.currconv.com/api/v7/currencies?' + this.key);
   }
-
-  // http://free.currconv.com/api/v7/convert?apiKey=4ae40c9452b442e94d73&q=USD_EUR&date=2021-02-03&compact=ultra
 
   getPairData(left: string, right: string): Observable<any> {
     const date = formatDate(new Date(), 'yyyy-MM-dd', 'en-US');

@@ -8,7 +8,7 @@ import {PairCurrency} from '../data/models/paircurrency';
   templateUrl: './currency.component.html',
   styleUrls: ['./currency.component.scss']
 })
-export class CurrencyComponent{
+export class CurrencyComponent {
 
   constructor(private currencyService: ApiService) {
   }

@@ -1,5 +1,4 @@
-import {AfterViewInit, Component, ElementRef, Inject} from '@angular/core';
-import {DOCUMENT} from '@angular/common';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-hello',
