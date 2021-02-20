@@ -12,7 +12,7 @@ export interface ChartModel {
   date: Date;
 }
 
-const MAX_COUNT_LOAD = 1;
+const MAX_COUNT_LOAD = 2;
 
 @Component({
   selector: 'app-chart',
