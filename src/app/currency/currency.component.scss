@@ -47,13 +47,13 @@
   flex-direction: column;
   min-width: 0;
   word-wrap: break-word;
-  background-color: #fff;
+  background-color: #e6f1f6;
   background-clip: initial;
-  border: 0 solid transparent;
+  border: 1px solid #97c1d1;
   border-radius: .25rem;
   margin-bottom: 24px;
-  box-shadow: 0 0 0.875rem 0 rgb(33 37 41 / 5%);
   transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+  white-space: nowrap;
 }
 
 .rateItem.selected {
@@ -76,6 +76,8 @@
 
 .rateItemBody .rateName {
   color: #96afc7;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .rateCard {
@@ -109,7 +111,7 @@
   max-width: 260px;
   transition: margin-left 0.35s cubic-bezier(0, 0.85, 0.68, 1.26), left 0.35s ease-in-out, margin-right 0.35s ease-in-out, right 0.35s ease-in-out;
   direction: ltr;
-  background: #222e3c;
+  background: #d0effc;
 }
 
 .content {
@@ -118,7 +120,7 @@
   min-width: 0;
   min-height: 100vh;
   transition: margin-left .35s ease-in-out, left .35s ease-in-out, margin-right .35s ease-in-out, right .35s ease-in-out;
-  background: #f7f7fc;
+  background: #fff;
   overflow: hidden;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
@@ -126,8 +128,6 @@
 
 .filterField {
   display: block;
-  width: 100%;
-  min-height: calc(1.8125rem + 2px);
   padding: .25rem .7rem;
   font-size: .875rem;
   font-weight: 400;
@@ -138,6 +138,11 @@
   border: 1px solid #ced4da;
   border-radius: .2rem;
   outline: none;
+}
+
+.searchBox {
+  width: 100%;
+  padding: 1.2rem 2.5rem 1rem 16px;
 }
 
 .placeholderImg {
@@ -241,5 +246,9 @@
   .mainList {
     padding: 1.2rem 2.5rem 1rem 2.5rem;
     width: auto;
+  }
+  .searchBox {
+    padding: 1.2rem 2.5rem 0rem calc(2.5rem + 12px);
+
   }
 }

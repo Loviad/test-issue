@@ -1,7 +1,7 @@
 <div class="mainBody">
 
   <div class="content">
-    <div class="favoriteCurrency p3">
+    <div class="favoriteCurrency">
       <div class="pair">
         <div class="pairVal" *ngFor="let pair of pairCurrency; let i = index"
              (click)="clickItem(i)" [class.active]="pair.active"> {{pair.left}} / {{pair.right}} </div>
