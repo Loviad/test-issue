@@ -31,7 +31,7 @@ export class ChartComponent implements OnInit, OnDestroy {
   private countLoad = 0;
   private margin = {top: 15, right: 50, bottom: 75, left: 75};
   private width = 0;
-  private height = 0;
+  private height = 350 - this.margin.top - this.margin.bottom;
   private x: any;
   private y: any;
   private svg: any;
@@ -44,7 +44,7 @@ export class ChartComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.subs = this.currencyService.needPaintGraph.subscribe((req) => {
-        d3.selectAll('svg > *').remove();
+        d3.selectAll('svg.chart > *').remove();
         this.data.length = 0;
         this.countLoad = 0;
         this.showInfo = false;
@@ -84,10 +84,8 @@ export class ChartComponent implements OnInit, OnDestroy {
 
   private resizeChart(): void {
     const widthNew = document.getElementById('chartArea')?.clientWidth;
-    const heightNew = document.getElementById('chartArea')?.clientHeight;
 
     this.width = (widthNew !== undefined ? widthNew - this.margin.left - this.margin.right : 0);
-    this.height = (heightNew !== undefined ? heightNew - this.margin.top - this.margin.bottom : 0);
   }
 
   @HostListener('window:resize') onWindowSResize(): void {

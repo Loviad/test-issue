@@ -2,13 +2,15 @@
 <div class="chartTable">
   <div class="block">
     <div class="chartMinState bodyChartData">
-      <div class="nameChartPair chatCardBlock">{{nameChartPair}}</div>
-      <div class="dateRangeChat chatCardBlock">{{dateRangeChat}}</div>
-      <div [class.profit]="profit" [class.deprof]="!profit" class="delta chatCardBlock">{{delta.toFixed(10)}}</div>
+      <div class="nd">
+        <div class="nameChartPair chatCardBlock">{{nameChartPair}}</div>
+        <div class="dateRangeChat chatCardBlock">{{dateRangeChat}}</div>
+      </div>
+      <div [class.profit]="profit" [class.deprof]="!profit" class="delta chatCardBlock">{{delta.toFixed(6)}}</div>
     </div>
   </div>
   <div class="block">
-    <div *ngIf="data.length;" class="chartDateState bodyChartData">
+    <div *ngIf="data.length;" class="chartDateState">
       <div *ngFor="let item of data; let i = index" class="bodyChartData">
         <div class="dateRangeChat chatCardBlock">{{ item.date | date: 'yyyy-MM-dd'}}</div>
         <div [class.profit]="i > 0 && (data[i].value - data[i-1].value > 0)"

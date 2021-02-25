@@ -6,7 +6,9 @@
         <div class="pairVal" *ngFor="let pair of pairCurrency; let i = index"
              (click)="clickItem(i)" [class.active]="pair.active"> {{pair.left}} / {{pair.right}} </div>
       </div>
-      <span (click)="addCurrency()" class="addButton">Добавить</span>
+      <div class="addButton" (click)="addCurrency()">
+        <span class="sp">Добавить</span>
+      </div>
     </div>
     <div *ngIf="showSymbols; else preloader" style="width: 100%">
       <div class="searchBox p3">
