@@ -36,6 +36,7 @@ export class ChartComponent implements OnInit, OnDestroy {
   private y: any;
   private svg: any;
   private line: d3Shape.Line<[number, number]> = d3Shape.line(); // this is line defination
+  private toolTip: any;
 
   constructor(private currencyService: ApiService) {
   }
@@ -53,6 +54,7 @@ export class ChartComponent implements OnInit, OnDestroy {
       }
     );
     this.ready.emit();
+    this.toolTip = d3.select('.tooltip');
   }
 
   private getChartData(data: { leftCur: string, rightCur: string }, date: Date = new Date()): void {
@@ -128,5 +130,26 @@ export class ChartComponent implements OnInit, OnDestroy {
       .datum(this.data)
       .attr('class', 'line')
       .attr('d', this.line);
+
+    this.svg.selectAll('dot')
+      .data(this.data)
+      .enter().append('circle')
+      .attr('r', 5)
+      .attr('class', 'dot')
+      .attr('cx', (d: any) => this.x(d.date))
+      .attr('cy', (d: any) => this.y(d.value))
+      .on('mouseover', (d: any) => {
+        this.toolTip.transition()
+          .duration(200)
+          .style('opacity', .9);
+        this.toolTip.html(formatDate(d.target.__data__.date, 'yyyy-MM-dd', 'en-US') + '<br/>'  + d.target.__data__.value)
+          .style('left', (d.pageX + 10) + 'px')
+          .style('top', (d.pageY + 15) + 'px');
+      })
+      .on('mouseout', () => {
+        this.toolTip.transition()
+          .duration(500)
+          .style('opacity', 0);
+      });
   }
 }

@@ -91,10 +91,10 @@
   pointer-events: all;
 }
 
-/* Style the dots by assigning a fill and stroke */
 ::ng-deep .dot {
-  fill: #ffab00;
-  stroke: #fff;
+  fill: #fff;
+  stroke: #ffab00;
+  stroke-width: 2px;
 }
 
 ::ng-deep .focus circle {
@@ -102,6 +102,16 @@
   stroke: steelblue;
 }
 
+::ng-deep .tooltip {
+  position: absolute;
+  text-align: right;
+  padding: 5px;
+  font: 12px sans-serif;
+  background: #e6f1f6;
+  border: 1px solid #ffab00;
+  border-radius: 8px;
+  pointer-events: none;
+}
 
 .chart {
   width: 100%;
